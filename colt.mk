@@ -12,8 +12,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# Include DU common configuration
-include vendor/du/config/common_full_phone.mk
+# Include Colt common configuration
+$(call inherit-product, vendor/colt/config/common_full_phone.mk)
+$(call inherit-product, vendor/colt/config/colt.mk)
 
 # Inherit from the common Open Source product configuration
 $(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base_telephony.mk)
@@ -24,11 +25,12 @@ $(call inherit-product, device/google/taimen/aosp_taimen.mk)
 
 
 # Override AOSP build properties
-PRODUCT_NAME := du_taimen
+PRODUCT_NAME := colt_taimen
 PRODUCT_DEVICE := taimen
 PRODUCT_BRAND := Google
 PRODUCT_MODEL := Pixel 2 XL
 PRODUCT_MANUFACTURER := Google
+RELEASE_TYPE := COLT_OFFICIAL
 
 # Device Fingerprint
 PRODUCT_BUILD_PROP_OVERRIDES += \
